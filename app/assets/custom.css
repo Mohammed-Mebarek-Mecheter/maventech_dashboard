@@ -1,0 +1,55 @@
+body {
+    background-color: #F0F4F8;
+    color: #102A43;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card {
+    border: none;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-weight: 600;
+    color: #3E7CB1;
+}
+
+.card-text {
+    font-size: 2em;
+    font-weight: 700;
+    color: #102A43;
+}
+
+.dropdown-toggle {
+    background-color: #FFFFFF;
+    color: #102A43;
+    border: 1px solid #81A4CD;
+}
+
+.dropdown-toggle:hover {
+    background-color: #F0F4F8;
+}
+
+.btn-primary {
+    background-color: #3E7CB1;
+    border-color: #3E7CB1;
+}
+
+.btn-primary:hover {
+    background-color: #2C5F8F;
+    border-color: #2C5F8F;
+}
+
+/* Add custom styles for charts */
+.js-plotly-plot .plotly .main-svg {
+    background-color: transparent !important;
+}
+
+.js-plotly-plot .plotly .modebar {
+    background-color: transparent !important;
+}
