@@ -1,6 +1,9 @@
 import dash_bootstrap_components as dbc
+import dash_mantine_components as dmc
 from dash import html, dcc
+from dash_iconify import DashIconify
 
+# Define a consistent color scheme
 colors = {
     'background': '#F8F9FA',
     'text': '#212529',
@@ -12,6 +15,7 @@ colors = {
     'danger': '#DC3545',
 }
 
+# Define the layout
 layout = dbc.Container([
     dbc.Row([
         dbc.Col(html.H1("MavenTech Sales Dashboard", className="text-center mb-4"), width=12)
@@ -21,13 +25,13 @@ layout = dbc.Container([
         dbc.Col([
             dbc.Card([
                 dbc.CardBody([
-                    html.H4("Filters", className="card-title"),
-                    dcc.DatePickerRange(id='date-range', className="mb-2"),
-                    dcc.Dropdown(id='regional-office-dropdown', placeholder="Select Regional Office", multi=True, className="mb-2"),
-                    dcc.Dropdown(id='sector-dropdown', placeholder="Select Sector", multi=True, className="mb-2"),
-                    dcc.Dropdown(id='product-dropdown', placeholder="Select Product", multi=True, className="mb-2"),
-                    dcc.Dropdown(id='sales-agent-dropdown', placeholder="Select Sales Agent", multi=True, className="mb-2"),
-                ])
+                    html.H4("Filters", className="card-title filter-title"),
+                    dcc.DatePickerRange(id='date-range', className="mb-2", display_format='MMM DD, YYYY', start_date_placeholder_text='Start', end_date_placeholder_text='End'),
+                    dcc.Dropdown(id='regional-office-dropdown', placeholder="Select Regional Office", multi=True, className="filter-dropdown"),
+                    dcc.Dropdown(id='sector-dropdown', placeholder="Select Sector", multi=True, className="filter-dropdown"),
+                    dcc.Dropdown(id='product-dropdown', placeholder="Select Product", multi=True, className="filter-dropdown"),
+                    dcc.Dropdown(id='sales-agent-dropdown', placeholder="Select Sales Agent", multi=True, className="filter-dropdown"),
+                ], className="filter-container")
             ], className="mb-4")
         ], width=3),
 

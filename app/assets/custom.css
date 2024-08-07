@@ -1,55 +1,47 @@
 body {
-    background-color: #F0F4F8;
-    color: #102A43;
+    background-color: #F8F9FA;
+    color: #212529;
     font-family: 'Roboto', sans-serif;
 }
 
 .card {
-    border: none;
-    border-radius: 8px;
-    transition: box-shadow 0.3s ease-in-out;
-}
-
-.card:hover {
+    margin: 10px 0;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
 }
 
 .card-title {
-    font-weight: 600;
-    color: #3E7CB1;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #007BFF;
 }
 
 .card-text {
-    font-size: 2em;
-    font-weight: 700;
-    color: #102A43;
+    font-size: 1.5em;
+    color: #333333;
 }
 
-.dropdown-toggle {
-    background-color: #FFFFFF;
-    color: #102A43;
-    border: 1px solid #81A4CD;
+.card-body {
+    padding: 20px;
 }
 
-.dropdown-toggle:hover {
-    background-color: #F0F4F8;
+h1, h4 {
+    color: #212529;
 }
 
-.btn-primary {
-    background-color: #3E7CB1;
-    border-color: #3E7CB1;
+.text-center {
+    text-align: center;
 }
 
-.btn-primary:hover {
-    background-color: #2C5F8F;
-    border-color: #2C5F8F;
+.filter-container {
+    margin-bottom: 20px;
 }
 
-/* Add custom styles for charts */
-.js-plotly-plot .plotly .main-svg {
-    background-color: transparent !important;
+.filter-title {
+    margin-bottom: 10px;
 }
 
-.js-plotly-plot .plotly .modebar {
-    background-color: transparent !important;
+.filter-dropdown {
+    margin-bottom: 10px;
 }

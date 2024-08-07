@@ -1,4 +1,4 @@
-from dash import Input, Output, State
+from dash import Input, Output
 import plotly.express as px
 from app import app
 from app.data_loading import load_sales_data
