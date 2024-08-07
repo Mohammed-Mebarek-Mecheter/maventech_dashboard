@@ -1,47 +1,97 @@
+/* Custom styles for the date range picker */
+.range-picker {
+    background-color: #041424; /* Background color to match body */
+    color: #F8F9FA; /* Text color to match body */
+}
+
+/* General body styles for dark mode */
 body {
-    background-color: #F8F9FA;
-    color: #212529;
+    background-color: #041424;  /* Dark background */
+    color: #F8F9FA;  /* Light text */
     font-family: 'Roboto', sans-serif;
 }
 
+/* Card styles */
 .card {
     margin: 10px 0;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
+    background-color: #343A40;  /* Dark card background */
 }
 
+/* Card title styles */
 .card-title {
     font-weight: bold;
     font-size: 1.2em;
-    color: #007BFF;
+    color: #007BFF;  /* Blue text for titles */
 }
 
+/* Card text styles */
 .card-text {
     font-size: 1.5em;
-    color: #333333;
+    color: #FFC107;  /* Yellow text for card content */
 }
 
+/* Card body padding */
 .card-body {
     padding: 20px;
 }
 
+/* Heading styles */
 h1, h4 {
-    color: #212529;
+    color: #F8F9FA;  /* Light text */
 }
 
+/* Centered text class */
 .text-center {
     text-align: center;
 }
 
+/* Filter container styles */
 .filter-container {
     margin-bottom: 20px;
+    background-color: #343A40;  /* Dark background for filter container */
+    padding: 20px;
+    border-radius: 10px;
 }
 
+/* Filter title styles */
 .filter-title {
     margin-bottom: 10px;
+    color: #F8F9FA;  /* Light text */
 }
 
+/* Filter dropdown styles */
 .filter-dropdown {
     margin-bottom: 10px;
+}
+
+.filter-dropdown .Select-control {
+    background-color: #041424;  /* Dark background for dropdown */
+    color: #F8F9FA;  /* Light text */
+}
+
+.filter-dropdown .Select-placeholder {
+    color: #FFC107;  /* Placeholder text color */
+}
+
+.filter-dropdown .Select-menu {
+    background-color: #041424;  /* Dark background for dropdown menu */
+    color: #F8F9FA;  /* Light text */
+}
+
+.filter-dropdown .Select-option {
+    background-color: #041424;  /* Dark background for options */
+    color: #F8F9FA;  /* Light text */
+}
+
+.filter-dropdown .Select-option.is-focused,
+.filter-dropdown .Select-option:hover {
+    background-color: #007BFF;  /* Highlight focused/hovered option */
+    color: #F8F9FA;  /* Light text */
+}
+
+/* Graph styles */
+.dash-graph {
+    background-color: #041424; /* Match the dashboard body background color */
 }

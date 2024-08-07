@@ -69,16 +69,126 @@ def update_charts(start_date, end_date, regional_offices, sectors, products, sal
     avg_deal_size = filtered_df['close_value'].mean()
     win_rate = len(filtered_df[filtered_df['deal_stage'] == 'Won']) / len(filtered_df) if len(filtered_df) > 0 else 0
 
-    revenue_over_time = px.line(filtered_df.groupby('close_date')['close_value'].sum().reset_index(), x='close_date', y='close_value', title='Revenue Over Time')
+    revenue_over_time = px.line(
+        filtered_df.groupby('close_date')['close_value'].sum().reset_index(),
+        x='close_date',
+        y='close_value'
+    ).update_layout(
+        title='',  # Remove the title
+        plot_bgcolor='#041424',  # Match the dashboard background color
+        paper_bgcolor='#041424',  # Match the dashboard background color
+        xaxis_title='Date',
+        yaxis_title='Revenue',
+        xaxis=dict(
+            title_font=dict(color='white'),  # White color for x-axis title
+            tickfont=dict(color='white')  # White color for x-axis ticks
+        ),
+        yaxis=dict(
+            title_font=dict(color='white'),  # White color for y-axis title
+            tickfont=dict(color='white')  # White color for y-axis ticks
+        ),
+        legend=dict(
+            font=dict(color='white')  # White color for legend text
+        )
+    )
 
     sales_pipeline_data = filtered_df['deal_stage'].value_counts().reset_index()
     sales_pipeline_data.columns = ['deal_stage', 'count']
-    sales_pipeline = px.funnel(sales_pipeline_data, x='count', y='deal_stage', title='Sales Pipeline')
+    sales_pipeline = px.funnel(
+        sales_pipeline_data,
+        x='count',
+        y='deal_stage'
+    ).update_layout(
+        title='',  # Remove the title
+        plot_bgcolor='#041424',  # Match the dashboard background color
+        paper_bgcolor='#041424',  # Match the dashboard background color
+        xaxis=dict(
+            title_font=dict(color='white'),  # White color for x-axis title
+            tickfont=dict(color='white')  # White color for x-axis ticks
+        ),
+        yaxis=dict(
+            title_font=dict(color='white'),  # White color for y-axis title
+            tickfont=dict(color='white')  # White color for y-axis ticks
+        ),
+        legend=dict(
+            font=dict(color='white')  # White color for legend text
+        )
+    )
 
-    top_products = px.bar(filtered_df.groupby('product')['close_value'].sum().nlargest(5).reset_index(), x='product', y='close_value', title='Top 5 Products')
-    sales_by_region = px.pie(filtered_df.groupby('regional_office')['close_value'].sum().reset_index(), values='close_value', names='regional_office', title='Sales by Region')
-    sales_cycle_duration = px.histogram(filtered_df, x='sales_cycle_duration', title='Sales Cycle Duration Distribution')
-    top_sales_agents = px.bar(filtered_df.groupby('sales_agent')['close_value'].sum().nlargest(10).reset_index(), x='sales_agent', y='close_value', title='Top 10 Sales Agents')
+    top_products = px.bar(
+        filtered_df.groupby('product')['close_value'].sum().nlargest(5).reset_index(),
+        x='product',
+        y='close_value'
+    ).update_layout(
+        title='',  # Remove the title
+        plot_bgcolor='#041424',  # Match the dashboard background color
+        paper_bgcolor='#041424',  # Match the dashboard background color
+        xaxis=dict(
+            title_font=dict(color='white'),  # White color for x-axis title
+            tickfont=dict(color='white')  # White color for x-axis ticks
+        ),
+        yaxis=dict(
+            title_font=dict(color='white'),  # White color for y-axis title
+            tickfont=dict(color='white')  # White color for y-axis ticks
+        ),
+        legend=dict(
+            font=dict(color='white')  # White color for legend text
+        )
+    )
+
+    sales_by_region = px.pie(
+        filtered_df.groupby('regional_office')['close_value'].sum().reset_index(),
+        values='close_value',
+        names='regional_office'
+    ).update_layout(
+        title='',  # Remove the title
+        plot_bgcolor='#041424',  # Match the dashboard background color
+        paper_bgcolor='#041424',  # Match the dashboard background color
+        legend=dict(
+            font=dict(color='white')  # White color for legend text
+        )
+    )
+
+    sales_cycle_duration = px.histogram(
+        filtered_df,
+        x='sales_cycle_duration'
+    ).update_layout(
+        title='',  # Remove the title
+        plot_bgcolor='#041424',  # Match the dashboard background color
+        paper_bgcolor='#041424',  # Match the dashboard background color
+        xaxis=dict(
+            title_font=dict(color='white'),  # White color for x-axis title
+            tickfont=dict(color='white')  # White color for x-axis ticks
+        ),
+        yaxis=dict(
+            title_font=dict(color='white'),  # White color for y-axis title
+            tickfont=dict(color='white')  # White color for y-axis ticks
+        ),
+        legend=dict(
+            font=dict(color='white')  # White color for legend text
+        )
+    )
+
+    top_sales_agents = px.bar(
+        filtered_df.groupby('sales_agent')['close_value'].sum().nlargest(10).reset_index(),
+        x='sales_agent',
+        y='close_value'
+    ).update_layout(
+        title='',  # Remove the title
+        plot_bgcolor='#041424',  # Match the dashboard background color
+        paper_bgcolor='#041424',  # Match the dashboard background color
+        xaxis=dict(
+            title_font=dict(color='white'),  # White color for x-axis title
+            tickfont=dict(color='white')  # White color for x-axis ticks
+        ),
+        yaxis=dict(
+            title_font=dict(color='white'),  # White color for y-axis title
+            tickfont=dict(color='white')  # White color for y-axis ticks
+        ),
+        legend=dict(
+            font=dict(color='white')  # White color for legend text
+        )
+    )
 
     return [
         f"${total_revenue:,.2f}",

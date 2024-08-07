@@ -6,29 +6,29 @@ This project is an interactive dashboard for MavenTech, a company that specializ
 
 ```
 maventech_dashboard/
-│
-├── data/
-│   └── sales_data.csv
-│
+├── .gitignore
 ├── app/
-│   ├── __init__.py
-│   ├── data_loading.py
-│   ├── layout.py
-│   ├── callbacks.py
-│   └── data_processing.py
-│
-├── assets/
-│   ├── custom.css
-│   └── logo.png
-│
-├── tests/
-│   ├── test_data_loading.py
-│   ├── test_layout.py
-│   └── test_callbacks.py
-│
-├── app.py
+├── ├── assets/
+├── ├── ├── custom.css
+├── ├── callbacks.py
+├── ├── data_grid.py
+├── ├── data_loading.py
+├── ├── layouts.py
+├── ├── init.py
+├── config.py
+├── data/
+├── ├── sales_data.csv
+├── notebooks/
+├── ├── ├── data_exploration-checkpoint.ipynb
+├── ├── data_exploration.ipynb
+├── ├── README.md
+├── README.md
 ├── requirements.txt
-└── README.md
+├── run.py
+├── tests/
+├── ├── test_dashboard.py
+├── ├── test_data_loading.py
+├── validate_data_script.py
 ```
 
 ## Setup and Installation
@@ -36,7 +36,7 @@ maventech_dashboard/
 1. **Clone the repository:**
 
 ```bash
-git clone <repository_url>
+git clone https://github.com/Mohammed-Mebarek-Mecheter/maventech_dashboard.git
 cd maventech_dashboard
 ```
 
@@ -100,20 +100,9 @@ python -m unittest discover -s tests
 5. **Performance:** Continuously monitor and optimize for fast load times and smooth interactions.
 6. **Flexibility:** Build in the ability to easily add new visualizations or data sources in the future.
 7. **Data Integrity:** Implement checks to ensure ongoing data quality as new data is added.
-```
 
-### 9. Requirements File
 
-#### `requirements.txt`
-
-```plaintext
-dash==2.0.0
-dash-bootstrap-components==1.0.0
-pandas==1.3.3
-plotly==5.3.1
-```
-
-### 10. Running the Application
+### 9. Running the Application
 
 Now you can run the application by executing:
 
