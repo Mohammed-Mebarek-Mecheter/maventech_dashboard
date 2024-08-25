@@ -2,6 +2,8 @@
 
 This project is an interactive dashboard for MavenTech, a company that specializes in selling computer hardware. The dashboard is designed to help sales managers track their team's quarterly performance.
 
+![maventech dashboard](maventech.png)
+
 ## Project Structure
 
 ```
